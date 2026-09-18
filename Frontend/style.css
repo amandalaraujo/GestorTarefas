@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #219150;
+}
+
+.tarefas-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tarefa-card {
+    border-left: 5px solid #bdc3c7;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.tarefa-card.prioridade-3 { border-left-color: #e74c3c; } /* Alta - Vermelho */
+.tarefa-card.prioridade-2 { border-left-color: #f39c12; } /* Normal - Laranja */
+.tarefa-card.prioridade-1 { border-left-color: #3498db; } /* Baixa - Azul */
+
+.tarefa-info h3 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.tarefa-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+}
+
+.badge-alta { background-color: #e74c3c; }
+.badge-normal { background-color: #f39c12; }
+.badge-baixa { background-color: #3498db; }
+
+.btn-delete {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-delete:hover { background: #c0392b; }

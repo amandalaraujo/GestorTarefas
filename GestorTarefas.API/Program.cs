@@ -3,9 +3,20 @@ using GestorTarefas.API.Data; // Importa o namespace do projeto GestorTarefas.AP
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuração do banco de dados usando Entity Framework Core com SQLite
+// Configuração do CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirTudo", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+// Configuração do Banco de Dados SQLite
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))); // Configura o contexto do banco de dados (AppDbContext) para usar SQLite como provedor de banco de dados,
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Adiciona os serviços para Controllers e Swagger
 builder.Services.AddControllers();
@@ -20,6 +31,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(); // Adiciona o middleware do Swagger UI, que fornece uma interface web interativa para explorar e testar a API. Isso é útil durante o desenvolvimento para verificar os endpoints da API e enviar solicitações de teste diretamente do navegador.
     app.UseSwagger(); // Adiciona o middleware do Swagger, que gera a documentação da API em formato JSON. Essa documentação é usada pelo Swagger UI para exibir os endpoints da API e suas informações, como parâmetros, respostas e descrições.
 }
+app.UseRouting(); // Adiciona o middleware de roteamento, que é responsável por direcionar as solicitações HTTP para os controladores e ações apropriadas com base nas rotas definidas na aplicação. 
 
 app.UseCors("PermitirTudo"); // Configura o middleware de CORS para permitir solicitações de qualquer origem, método e cabeçalho, facilitando o desenvolvimento e testes da API a partir de diferentes domínios.
 
