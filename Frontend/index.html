@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tarefas e Compliance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>Gestor de Tarefas e Compliance</h1>
+            <p>Monitore suas atividades, prazos e checklists em um só lugar.</p>
+        </header>
+
+        <!-- Formulário de Cadastro -->
+         <section class="card">
+            <h2>Nova Tarefa</h2>
+            <form id="form-tarefa">
+
+                <div class="form-group">
+                    <label for="titulo">Título *</label>
+                    <input type="text" id="titulo" name="titulo" required placeholder="Ex: Revisar Políticas de Segurança">
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" name="descricao" placeholder="Detalhes da tarefa..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prioridade">Prioridade</label>
+                        <select id="prioridade">
+                            <option value="1">Baixa</option>
+                            <option value="2" selected>Normal</option>
+                            <option value="3">Alta</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dataConclusao">Data de Conclusão</label>
+                        <input type="date" id="dataConclusao">
+                    </div>
+
+                    <button type="submit" class="btn-primary">Cadastrar Tarefa</button>
+                </div>
+
+            </form>
+         </section>
+
+        <!-- Lista de Tarefas -->
+        <section class="card">
+            <h2>Suas Tarefas</h2>
+            <div id="lista-tarefas" class="tarefa-grid">
+                <!-- As tarefas serão inseridas aqui dinamicamente via JS -->
+            </div>
+        </section>
+        
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
